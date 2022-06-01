@@ -1,6 +1,8 @@
-package pl.izakostrzewska.openjobs;
+package pl.izakostrzewska.openjobs.requirement;
 
 import lombok.Data;
+import pl.izakostrzewska.openjobs.Technology;
+import pl.izakostrzewska.openjobs.offer.Offer;
 
 import javax.persistence.*;
 
@@ -17,5 +19,5 @@ public class Requirement {
     @ManyToOne
     @JoinColumn(name = "technology_id")
     private Technology technology;
-    private int level;
+    private Integer level;
 }

@@ -1,6 +1,8 @@
-package pl.izakostrzewska.openjobs;
+package pl.izakostrzewska.openjobs.company;
 
 import lombok.Data;
+import pl.izakostrzewska.openjobs.offer.Offer;
+import pl.izakostrzewska.openjobs.user.User;
 
 import javax.persistence.*;
 import java.util.List;

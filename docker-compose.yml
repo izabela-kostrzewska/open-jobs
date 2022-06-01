@@ -6,4 +6,5 @@ services:
     ports:
       - "3307:3306"
     environment:
+      MYSQL_DATABASE: openjobs
       MYSQL_ROOT_PASSWORD: password

@@ -1,4 +1,4 @@
-package pl.izakostrzewska.openjobs;
+package pl.izakostrzewska.openjobs.user;
 
 import lombok.Data;
 

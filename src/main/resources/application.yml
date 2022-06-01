@@ -1,13 +1,9 @@
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3307/openjobs
-    username: root
-    password: password
   jpa:
-#    properties:
-#      hibernate:
-#        default_schema: openjobs
     hibernate:
       ddl-auto: validate
+    open-in-view: false
   flyway:
     default-schema: openjobs
+    locations:
+      - classpath:/db/changelog/master

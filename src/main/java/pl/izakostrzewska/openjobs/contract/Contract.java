@@ -1,4 +1,4 @@
-package pl.izakostrzewska.openjobs;
+package pl.izakostrzewska.openjobs.contract;
 
 import lombok.Data;
 
@@ -13,6 +13,6 @@ public class Contract {
     private Long id;
     @Enumerated(EnumType.STRING)
     private ContractType type;
-    private int minSalary;
-    private int maxSalary;
+    private Integer minSalary;
+    private Integer maxSalary;
 }
