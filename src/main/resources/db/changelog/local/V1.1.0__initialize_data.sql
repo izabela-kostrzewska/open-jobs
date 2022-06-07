@@ -1,24 +1,24 @@
-insert into user (id, email, password) values (1, 'marrell0@diigo.com', 'GixZo1BOk');
-insert into user (id, email, password) values (2, 'knorthwood1@bigcartel.com', 'mz7tk7TD');
-insert into user (id, email, password) values (3, 'yjockle2@psu.edu', 'gAJnhFT0Y');
-insert into user (id, email, password) values (4, 'lhuxstep3@liveinternet.ru', 'nvSy6f4');
-insert into user (id, email, password) values (5, 'pajam4@gmpg.org', 'svTNKEwT');
-insert into user (id, email, password) values (6, 'rcodman5@nba.com', '94WMIo2Rk');
-insert into user (id, email, password) values (7, 'leadmeades6@comsenz.com', 'ut5bZEEmvB2I');
-insert into user (id, email, password) values (8, 'rblythin7@howstuffworks.com', 'jRPLtxr3');
-insert into user (id, email, password) values (9, 'dmartinetto8@youku.com', 'irw1lu');
-insert into user (id, email, password) values (10, 'rtrathen9@cnbc.com', 'XHT6EXSR');
+insert into user (id, email, password, role) values (1, 'ik-testowy@op.pl', '{noop}password', 'ADMINISTRATOR');
+insert into user (id, email, password, role) values (2, 'knorthwood1@bigcartel.com', '{noop}mz7tk7TD', 'BUSINESS_USER');
+insert into user (id, email, password, role) values (3, 'yjockle2@psu.edu', '{noop}gAJnhFT0Y', 'BUSINESS_USER');
+insert into user (id, email, password, role) values (4, 'lhuxstep3@liveinternet.ru', '{noop}nvSy6f4', 'BUSINESS_USER');
+insert into user (id, email, password, role) values (5, 'pajam4@gmpg.org', '{noop}svTNKEwT', 'BUSINESS_USER');
+insert into user (id, email, password, role) values (6, 'rcodman5@nba.com', '{noop}94WMIo2Rk', 'BUSINESS_USER');
+insert into user (id, email, password, role) values (7, 'leadmeades6@comsenz.com', '{noop}ut5bZEEmvB2I', 'BUSINESS_USER');
+insert into user (id, email, password, role) values (8, 'rblythin7@howstuffworks.com', '{noop}jRPLtxr3', 'BUSINESS_USER');
+insert into user (id, email, password, role) values (9, 'dmartinetto8@youku.com', '{noop}irw1lu', 'BUSINESS_USER');
+insert into user (id, email, password, role) values (10, 'rtrathen9@cnbc.com', '{noop}XHT6EXSR', 'BUSINESS_USER');
 
 insert into company (user_id, name, address, description, logo_image) values (9, 'Meezzy', '8635 Rowland Circle', 'lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien', 'http://dummyimage.com/202x100.png/cc0000/ffffff');
 insert into company (user_id, name, address, description, logo_image) values (3, 'Thoughtstorm', '5 Hollow Ridge Road', 'a odio in hac habitasse platea dictumst maecenas ut massa quis augue', 'http://dummyimage.com/195x100.png/dddddd/000000');
 insert into company (user_id, name, address, description, logo_image) values (2, 'Teklist', '0 Blue Bill Park Way', 'dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis', 'http://dummyimage.com/147x100.png/dddddd/000000');
 insert into company (user_id, name, address, description, logo_image) values (10, 'Edgeclub', '367 Schurz Junction', 'dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices', 'http://dummyimage.com/105x100.png/5fa2dd/ffffff');
-insert into company (user_id, name, address, description, logo_image) values (1, 'Livetube', '59186 Hoffman Park', 'montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes', 'http://dummyimage.com/156x100.png/cc0000/ffffff');
+insert into company (user_id, name, address, description, logo_image) values (5, 'Livetube', '59186 Hoffman Park', 'montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes', 'http://dummyimage.com/156x100.png/cc0000/ffffff');
 insert into company (user_id, name, address, description, logo_image) values (9, 'Meevee', '778 3rd Point', 'ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor', 'http://dummyimage.com/157x100.png/cc0000/ffffff');
 insert into company (user_id, name, address, description, logo_image) values (6, 'Linkbuzz', '5627 Miller Plaza', 'consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis', 'http://dummyimage.com/231x100.png/cc0000/ffffff');
 insert into company (user_id, name, address, description, logo_image) values (2, 'Realcube', '3381 Vernon Point', 'in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla', 'http://dummyimage.com/171x100.png/cc0000/ffffff');
 insert into company (user_id, name, address, description, logo_image) values (8, 'Browseblab', '50 Jenifer Terrace', 'hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia', 'http://dummyimage.com/141x100.png/5fa2dd/ffffff');
-insert into company (user_id, name, address, description, logo_image) values (1, 'Zoomcast', '87 Marcy Hill', 'amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci', 'http://dummyimage.com/208x100.png/dddddd/000000');
+insert into company (user_id, name, address, description, logo_image) values (4, 'Zoomcast', '87 Marcy Hill', 'amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci', 'http://dummyimage.com/208x100.png/dddddd/000000');
 
 insert into contract (id, type, min_salary, max_salary) values (1, 'UNPAID_INTERNSHIP', null, null);
 insert into contract (id, type, min_salary, max_salary) values (2, 'B2B', 9000, 25000);

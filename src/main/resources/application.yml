@@ -7,3 +7,6 @@ spring:
     default-schema: openjobs
     locations:
       - classpath:/db/changelog/master
+jwt:
+  secret: 84d35817-7f97-459f-ab4c-bd44161a5546
+  expiresIn: 360000

@@ -1,8 +1,9 @@
 CREATE TABLE user
 (
     id       BIGINT PRIMARY KEY AUTO_INCREMENT,
-    email    VARCHAR(120) NOT NULL UNIQUE,
-    password VARCHAR(45)  NOT NULL
+    email    VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(30)  NOT NULL,
+    role     VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE company
