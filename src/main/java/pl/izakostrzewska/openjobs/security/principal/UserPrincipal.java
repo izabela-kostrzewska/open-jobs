@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import pl.izakostrzewska.openjobs.application.user.User;
+import pl.izakostrzewska.openjobs.persistence.entity.User;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,6 +13,10 @@ import java.util.List;
 public class UserPrincipal implements UserDetails {
 
     private final User user;
+
+    public Long getId() {
+        return user.getId();
+    }
 
     @Override
     public String getUsername() {
@@ -46,6 +50,6 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return user.getEnabled();
     }
 }

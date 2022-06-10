@@ -3,11 +3,11 @@ package pl.izakostrzewska.openjobs.security.authorization;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
-import pl.izakostrzewska.openjobs.security.authentication.AuthenticationToken;
 import pl.izakostrzewska.openjobs.security.jwt.JwtService;
 
 import javax.servlet.FilterChain;
@@ -36,11 +36,11 @@ public class AuthorizationFilter extends BasicAuthenticationFilter {
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws IOException, ServletException {
-        getAuthentication(request).ifPresent(this::setAuthentication);
+        getAuthentication(request).ifPresent(this::setAuthenticationContext);
         filterChain.doFilter(request, response);
     }
 
-    private Optional<AuthenticationToken> getAuthentication(HttpServletRequest request) {
+    private Optional<UsernamePasswordAuthenticationToken> getAuthentication(HttpServletRequest request) {
         return Optional.ofNullable(request.getHeader(HttpHeaders.AUTHORIZATION))
                 .filter(token -> token.startsWith(TOKEN_PREFIX))
                 .map(token -> token.replace(TOKEN_PREFIX, ""))
@@ -48,12 +48,12 @@ public class AuthorizationFilter extends BasicAuthenticationFilter {
                 .map(this::createAuthenticationToken);
     }
 
-    private AuthenticationToken createAuthenticationToken(String subject) {
+    private UsernamePasswordAuthenticationToken createAuthenticationToken(String subject) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(subject);
-        return new AuthenticationToken(userDetails);
+        return new UsernamePasswordAuthenticationToken(userDetails.getUsername(), null, userDetails.getAuthorities());
     }
 
-    private void setAuthentication(AuthenticationToken token) {
+    private void setAuthenticationContext(UsernamePasswordAuthenticationToken token) {
         SecurityContextHolder.getContext().setAuthentication(token);
     }
 }

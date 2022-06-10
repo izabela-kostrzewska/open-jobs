@@ -5,10 +5,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import pl.izakostrzewska.openjobs.security.authentication.dto.AuthenticateUserRequestDTO;
-import pl.izakostrzewska.openjobs.security.authentication.dto.TokenResponseDTO;
+import pl.izakostrzewska.openjobs.application.dto.CredentialsDTO;
+import pl.izakostrzewska.openjobs.application.dto.TokenDTO;
 import pl.izakostrzewska.openjobs.security.principal.UserPrincipal;
 import pl.izakostrzewska.openjobs.security.jwt.JwtService;
 
@@ -36,14 +37,14 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     @SneakyThrows(IOException.class)
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) {
-        AuthenticationToken token = createAuthenticationToken(request);
+        UsernamePasswordAuthenticationToken token = createAuthenticationToken(request);
         setDetails(request, token);
         return getAuthenticationManager().authenticate(token);
     }
 
-    private AuthenticationToken createAuthenticationToken(HttpServletRequest request) throws IOException {
-        AuthenticateUserRequestDTO requestDTO = objectMapper.readValue(request.getReader(), AuthenticateUserRequestDTO.class);
-        return new AuthenticationToken(requestDTO);
+    private UsernamePasswordAuthenticationToken createAuthenticationToken(HttpServletRequest request) throws IOException {
+        CredentialsDTO requestDTO = objectMapper.readValue(request.getReader(), CredentialsDTO.class);
+        return new UsernamePasswordAuthenticationToken(requestDTO.getUsername(), requestDTO.getPassword());
     }
 
     @Override
@@ -55,6 +56,6 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
         String token = jwtService.createToken(principal);
 
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-        response.getWriter().write(objectMapper.writeValueAsString(new TokenResponseDTO(token)));
+        response.getWriter().write(objectMapper.writeValueAsString(new TokenDTO(token)));
     }
 }

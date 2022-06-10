@@ -1,9 +1,24 @@
 CREATE TABLE user
 (
-    id       BIGINT PRIMARY KEY AUTO_INCREMENT,
-    email    VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(30)  NOT NULL,
-    role     VARCHAR(255) NOT NULL
+    id         BIGINT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(60)  NOT NULL,
+    last_name  VARCHAR(60)  NOT NULL,
+    email      VARCHAR(255) NOT NULL UNIQUE,
+    password   VARCHAR(30)  NOT NULL,
+    role       VARCHAR(255) NOT NULL,
+    enabled    BOOLEAN      NOT NULL DEFAULT FALSE
+);
+
+CREATE TABLE confirmation
+(
+    id         BIGINT PRIMARY KEY AUTO_INCREMENT,
+    user_id    BIGINT       NOT NULL,
+    type       VARCHAR(255) NOT NULL,
+    token      VARCHAR(255) NOT NULL UNIQUE,
+    expires_at DATETIME     NOT NULL,
+    FOREIGN KEY (user_id)
+        REFERENCES user (id)
+        ON DELETE CASCADE
 );
 
 CREATE TABLE company

@@ -8,3 +8,11 @@ services:
     environment:
       MYSQL_DATABASE: openjobs
       MYSQL_ROOT_PASSWORD: password
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+networks:
+  openjobs:
+    driver: bridge

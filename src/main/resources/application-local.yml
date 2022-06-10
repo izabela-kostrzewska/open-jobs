@@ -7,3 +7,11 @@ spring:
     locations:
       - classpath:/db/changelog/master
       - classpath:/db/changelog/local
+  mail:
+    host: localhost
+    port: 1025
+    username: root
+    password: password
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true

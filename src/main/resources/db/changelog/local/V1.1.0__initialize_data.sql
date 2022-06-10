@@ -1,13 +1,13 @@
-insert into user (id, email, password, role) values (1, 'ik-testowy@op.pl', '{noop}password', 'ADMINISTRATOR');
-insert into user (id, email, password, role) values (2, 'knorthwood1@bigcartel.com', '{noop}mz7tk7TD', 'BUSINESS_USER');
-insert into user (id, email, password, role) values (3, 'yjockle2@psu.edu', '{noop}gAJnhFT0Y', 'BUSINESS_USER');
-insert into user (id, email, password, role) values (4, 'lhuxstep3@liveinternet.ru', '{noop}nvSy6f4', 'BUSINESS_USER');
-insert into user (id, email, password, role) values (5, 'pajam4@gmpg.org', '{noop}svTNKEwT', 'BUSINESS_USER');
-insert into user (id, email, password, role) values (6, 'rcodman5@nba.com', '{noop}94WMIo2Rk', 'BUSINESS_USER');
-insert into user (id, email, password, role) values (7, 'leadmeades6@comsenz.com', '{noop}ut5bZEEmvB2I', 'BUSINESS_USER');
-insert into user (id, email, password, role) values (8, 'rblythin7@howstuffworks.com', '{noop}jRPLtxr3', 'BUSINESS_USER');
-insert into user (id, email, password, role) values (9, 'dmartinetto8@youku.com', '{noop}irw1lu', 'BUSINESS_USER');
-insert into user (id, email, password, role) values (10, 'rtrathen9@cnbc.com', '{noop}XHT6EXSR', 'BUSINESS_USER');
+insert into user (id, first_name, last_name, email, password, role, enabled) values (1, 'Alex', 'Smith', 'ik-testowy@op.pl', '{noop}password', 'ADMINISTRATOR', true);
+insert into user (id, first_name, last_name, email, password, role, enabled) values (2, 'Jim', 'Raynor', 'knorthwood1@bigcartel.com', '{noop}mz7tk7TD', 'BUSINESS_USER', true);
+insert into user (id, first_name, last_name, email, password, role, enabled) values (3, 'Stefan', 'Grim', 'yjockle2@psu.edu', '{noop}gAJnhFT0Y', 'BUSINESS_USER', true);
+insert into user (id, first_name, last_name, email, password, role, enabled) values (4, 'Sarah', 'Doe', 'lhuxstep3@liveinternet.ru', '{noop}nvSy6f4', 'BUSINESS_USER', true);
+insert into user (id, first_name, last_name, email, password, role, enabled) values (5, 'Tim', 'Heard', 'pajam4@gmpg.org', '{noop}svTNKEwT', 'BUSINESS_USER', true);
+insert into user (id, first_name, last_name, email, password, role, enabled) values (6, 'Jessica', 'Riddle', 'rcodman5@nba.com', '{noop}94WMIo2Rk', 'BUSINESS_USER', true);
+insert into user (id, first_name, last_name, email, password, role, enabled) values (7, 'Markus', 'Drake', 'leadmeades6@comsenz.com', '{noop}ut5bZEEmvB2I', 'BUSINESS_USER', true);
+insert into user (id, first_name, last_name, email, password, role, enabled) values (8, 'Jane', 'Valentine', 'rblythin7@howstuffworks.com', '{noop}jRPLtxr3', 'BUSINESS_USER', true);
+insert into user (id, first_name, last_name, email, password, role, enabled) values (9, 'Robert', 'Cole', 'dmartinetto8@youku.com', '{noop}irw1lu', 'BUSINESS_USER', true);
+insert into user (id, first_name, last_name, email, password, role, enabled) values (10, 'John', 'Noble', 'rtrathen9@cnbc.com', '{noop}XHT6EXSR', 'BUSINESS_USER', true);
 
 insert into company (user_id, name, address, description, logo_image) values (9, 'Meezzy', '8635 Rowland Circle', 'lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien', 'http://dummyimage.com/202x100.png/cc0000/ffffff');
 insert into company (user_id, name, address, description, logo_image) values (3, 'Thoughtstorm', '5 Hollow Ridge Road', 'a odio in hac habitasse platea dictumst maecenas ut massa quis augue', 'http://dummyimage.com/195x100.png/dddddd/000000');

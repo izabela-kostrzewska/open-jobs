@@ -26,8 +26,6 @@ import pl.izakostrzewska.openjobs.security.principal.UserPrincipalService;
 @RequiredArgsConstructor
 public class SecurityConfiguration {
 
-    private static final String AUTHENTICATION_ENDPOINT = "/authentication";
-
     private final ObjectMapper objectMapper;
     private final UserPrincipalService userPrincipalService;
     private final JwtService jwtService;
@@ -46,13 +44,13 @@ public class SecurityConfiguration {
     public SecurityFilterChain filterChain(HttpSecurity http, AuthenticationManager authenticationManager) throws Exception {
         return http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers(AUTHENTICATION_ENDPOINT).permitAll()
+                .antMatchers("/access/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .addFilter(new AuthenticationFilter(authenticationManager, jwtService, objectMapper, AUTHENTICATION_ENDPOINT))
+                .addFilter(new AuthenticationFilter(authenticationManager, jwtService, objectMapper, "/authentication"))
                 .addFilter(new AuthorizationFilter(authenticationManager, userPrincipalService, jwtService))
                 .exceptionHandling()
                 .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
